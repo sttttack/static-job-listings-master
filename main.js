@@ -3,46 +3,43 @@
 fetch("./data.json")
   .then((response) => response.json())
   .then((data) => {
-    console.log(data);
+
+    const mainHTML = document.querySelector(".main")
+    const myData = (data);
 
 
+    const myArray = data.map(element => {
 
-    for (var i = 0; i < data.length; i++) {
-        
-        const p = document.createElement("h1");
-        document.body.appendChild(p);
+      
+      let stringNew = element.new.toString();
+      if (stringNew === 'true') {
+        var newString = `<div id="newString">New!</div>`
+      } else {
+        newString = ``
+      }
 
+      let stringFeatured = element.featured.toString();
 
-        if (data[i].new === true) {
-            console.log('its true')
-        } else {
-            console.log('it is not true');
-        }
+      if (stringFeatured === 'true') {
+        var featuredString = `<div id="featuredString">Featured!</div>`
+      } else 
+        featuredString = ``
 
-        // if (data[i].tools.length === 0 ) {
-        //     console.log( document.querySelector('#small_boxes'))
-        //     document.querySelector('#small_boxes').style.display = "none"
-        // } else {
-        //     document.querySelector('#small_boxes').style.display = "block"
-        // }
-
-
-      document.querySelector("#main").innerHTML += `<div class="box">
-            <img id="profile" src="${data[i].logo}">
-            <h6>${data[i].company}</h6>
-            <p>${data[i].position}</p> 
-            <h5 id="small"> ${data[i].postedAt} &#x2022 ${data[i].contract} &#x2022 ${data[i].location}</h5>
-
-            <div id="hr"></div>
-            <div id="tools">
-            <div id="small_boxes"><h5>${data[i].role}</h5></div>     
-            <div id="small_boxes"><h5>${data[i].level}</h5></div>
-            <div id="small_boxes"><p id="languages">${data[i].languages}</p></div>
-                    
-            <div id="small_boxes"><h5>${data[i].tools}</h5></div>       
-            
-            </div>
-            </div>
-             `;
-    }
-  });
+      return mainHTML.innerHTML += `<div class="box">
+      <img id="profile" src="${element.logo}">
+      <div id="first_div"><h6>${element.company}</h6>
+      ${newString}
+      ${featuredString}</div>
+      <p>${element.position}</p>
+      <h5 id="small"> ${element.postedAt} &#x2022 ${element.contract} &#x2022 ${element.location}</h5>
+      <div id="hr"></div>
+      <div id="tools">
+      <div id="small_boxes"><h5>${element.role}</h5></div> 
+      <div id="small_boxes"><h5>${element.level}</h5></div>   
+      ${element.languages.map(language =>`<div id="small_boxes"><h5>${language}</h5></div>`).join("")}
+      ${element.tools.map(tool =>`<div id="small_boxes"><h5>${tool}</h5></div>`).join("")}
+      </div>
+      </div>`
+    })
+    
+});

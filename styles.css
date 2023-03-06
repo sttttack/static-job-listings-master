@@ -16,12 +16,14 @@ body {
   width: 100vw;
 }
 
-#main {
+.main {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
 }
+
+
 
 .box {
   display: flex;
@@ -58,6 +60,7 @@ h5 {
     width: 200px;
     height: 80px;
     display: grid;
+    align-items: center;
     grid-template-columns: auto auto auto;
     gap: 16px;
     margin-bottom: 24px;
@@ -94,7 +97,7 @@ p {
 }
 
 #small_boxes {
-    display: ;
+    display: block;
     width: fit-content;
     height: 32px;
     padding: 5px;
@@ -106,7 +109,7 @@ p {
 
 .active {
     width: 100px;
-    height: 10px;
+    height: 100px;
     background-color: black;
 }
 
@@ -123,4 +126,34 @@ p {
   line-height: 24px;
   letter-spacing: -0.123077px;
   color: #5ca5a5;
+}
+
+#newString {
+  display: block;
+  width: 51px;
+  height: 25px;
+  background-color: #5CA5A5;
+  border-radius: 12px;
+  text-align: center;
+  padding: 5px;
+  margin-left: 1rem;
+}
+
+#featuredString {
+  width: 79px;
+  height: 24px;
+  border-radius: 12px;
+  background-color: #2B3939;
+  text-align: center;
+  padding: 5px;
+  color: #ffffff;
+  margin-left: 1rem;
+
+}
+
+#first_div {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: start;
+  align-items: center;
 }
