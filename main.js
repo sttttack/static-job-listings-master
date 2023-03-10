@@ -3,8 +3,11 @@
 fetch("./data.json")
   .then((response) => response.json())
   .then((data) => {
+
+
     const mainHTML = document.querySelector(".main");
     const arrayData = data;
+
     const myArray = data.map((element) => {
       var langElement = element.languages;
       var toolsElement = element.tools;
@@ -22,7 +25,7 @@ fetch("./data.json")
         var featuredString = `<div id="featuredString">Featured!</div>`;
       } else featuredString = ``;
 
-      mainHTML.innerHTML += `<div class="box">
+      const home = mainHTML.innerHTML += `<div class="box">
       <img id="profile" src="${element.logo}">
       <div id="first_div"><h6>${element.company}</h6>
       ${newString}
@@ -50,6 +53,10 @@ fetch("./data.json")
       const boxes = document.querySelectorAll(".box");
       const smallBox = document.querySelectorAll("#small_boxes");
       const filterDiv = document.querySelector(".upper_div");
+      const clearBtn = document.querySelector('#remove');
+      
+
+     
 
       for (var i = 0; i < smallBox.length; i++) {
         smallBox[i].addEventListener("click", (e) => {
@@ -61,11 +68,14 @@ fetch("./data.json")
           );
 
           const filterList = (array, element) => {
-            upperDiv.style.display = "flex";
+            
             if (targetValue === `${targetValue}`) {
               const li = document.createElement("div");
-              li.innerHTML += `<div id="small_boxes"><h5>${targetValue}</h5></div>`;
+              upperDiv.style.display = "grid";
+              li.innerHTML += `<div id="main_box"><div id="small_boxes"><h5>${targetValue}</h5></div><div id="close">X</div></div>`;
+              
               element.append(li);
+
               boxes.forEach((box) => {
                 const dataObject = arrayData.find(
                   (item) => item.company === box.querySelector("h6").textContent
@@ -73,13 +83,31 @@ fetch("./data.json")
                 if (
                   !dataObject.languages.includes(`${targetValue}`) &&
                   !dataObject.role.includes(`${targetValue}`) &&
-                  !dataObject.tools.includes(`${targetValue}`)
+                  !dataObject.tools.includes(`${targetValue}`) &&
+                  !dataObject.level.includes(`${targetValue}`)
                 ) {
-                  box.style.display = "none";
+                  box.style.display = "none"; 
                 }
+                
               });
             }
+            const xBtn = document.querySelectorAll('#close')
+            for (var j = 0; j < xBtn.length; j++)
+            xBtn[j].addEventListener('click', (close) => {
+             
+
+              
+              const mainBox = document.querySelector('#main_box')       
+              const minorBox = mainBox.querySelector("h5").innerHTML
+              for (var p = 0; p < minorBox.length; p++) 
+                console.log(minorBox) 
+              
+            })
           };
+          
+          clearBtn.addEventListener('click', (p) => {
+            location.reload();
+          })
 
           filterList(filterLang, upperDiv);
         });
