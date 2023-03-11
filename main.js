@@ -73,6 +73,8 @@ fetch("./data.json")
             
             if (targetValue === `${targetValue}`) {
               const li = document.createElement("div");
+              
+              
               upperDiv.style.display = "grid";
               li.innerHTML += `<div id="main_box"><div id="small_boxes"><h5>${targetValue}</h5></div><div id="close">X</div></div>`;
               
@@ -89,22 +91,23 @@ fetch("./data.json")
                   !dataObject.level.includes(`${targetValue}`)
                 ) {
                   box.style.display = "none"; 
-                }
+                } li.addEventListener('click', (a) => {
+                  li.remove();
+                  boxes.forEach((box) => {
+                  box.style.display = 'flex';
+                })
+                }) 
+                
+                
+
+
+                  
+                  
+                
                 
               });
             }
-            const xBtn = document.querySelectorAll('#close')
-            for (var j = 0; j < xBtn.length; j++)
-            xBtn[j].addEventListener('click', (close) => {
-             
 
-              
-              const mainBox = document.querySelector('#main_box')       
-              const minorBox = mainBox.querySelector("h5").innerHTML
-              for (var p = 0; p < minorBox.length; p++) 
-                console.log(minorBox) 
-              
-            })
           };
           
           clearBtn.addEventListener('click', (p) => {
