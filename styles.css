@@ -14,6 +14,7 @@ body {
 
 #header {
   width: 100vw;
+  background-color: #5CA5A5;
 }
 
 #header_desktop {
@@ -218,6 +219,7 @@ p {
   #header_desktop {
     display: block;
     width: 100%;
+    background-color: #5CA5A5;
   }
 
   .box {
@@ -251,9 +253,14 @@ p {
 
   #first_div {
     display: flex;   
-    justify-content: flex-start;
-    
-    
+    justify-content: flex-start;   
+  }
+  
+  .upper_div {
+    grid-template-columns: auto auto auto auto auto auto auto;
+    width: 1110px;
+    height: 72px;
+    top: -40px;
   }
 
   h6 {
@@ -273,6 +280,11 @@ p {
     flex-direction: column;
     position: relative;
     left: -160px;
+  }
+
+  #remove {
+    position: absolute;
+    left: 93%;
   }
 
 
