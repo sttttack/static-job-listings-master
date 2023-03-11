@@ -27,13 +27,15 @@ fetch("./data.json")
 
       const home = mainHTML.innerHTML += `<div class="box">
       <img id="profile" src="${element.logo}">
+      <div id="desktop">
       <div id="first_div"><h6>${element.company}</h6>
       ${newString}
-      ${featuredString}</div>
+      ${featuredString}
+      </div>
       <p>${element.position}</p>
       <h5 id="small"> ${element.postedAt} &#x2022 ${element.contract} &#x2022 ${
         element.location
-      }</h5>
+      }</h5></div>
       <div id="hr"></div>
       <div id="tools">
       <div id="small_boxes"><h5>${element.role}</h5></div> 

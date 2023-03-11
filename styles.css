@@ -16,6 +16,10 @@ body {
   width: 100vw;
 }
 
+#header_desktop {
+  display: none;
+}
+
 .main {
   display: flex;
   flex-direction: column;
@@ -37,7 +41,6 @@ body {
 }
 
 #close {
-  
   width: 32px;
   height: 32px;
   background-color: #5CA5A5;
@@ -183,7 +186,7 @@ p {
   background-color: #5CA5A5;
   border-radius: 12px;
   text-align: center;
-  padding: 5px;
+  padding: 6px;
   margin-left: 1rem;
 }
 
@@ -204,4 +207,69 @@ p {
   grid-template-columns: auto auto auto;
   justify-content: start;
   align-items: center;
+}
+
+@media only screen and (min-width: 769px) {
+  
+  #header {
+    display: none;
+  }
+
+  #header_desktop {
+    display: block;
+    width: 100%;
+  }
+
+  .box {
+    flex-direction: row;
+    align-items: center;
+    width: 1110px;
+    height: 152px;
+    background: #FFFFFF;
+    box-shadow: 0px 15px 20px -5px rgba(13, 113, 130, 0.15);
+    border-radius: 5px;
+    margin-left: 0;
+  }
+
+  #profile {
+    top: 0;
+    width: 88px;
+    height: 88px;
+  }
+
+  #hr {
+    display: none;
+  }
+
+  #tools {
+    display: flex;
+    
+    position: relative;
+    justify-content: flex-end;
+    left: 48px;    
+  }
+
+  #first_div {
+    display: flex;   
+    justify-content: flex-start;
+    
+    
+  }
+
+  h6 {
+    font-size: 18px;
+  }
+
+  #small  {
+    font-size: 18px;
+  }
+
+  #desktop {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: -160px;
+  }
+
+
 }
