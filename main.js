@@ -75,8 +75,8 @@ fetch("./data.json")
               const li = document.createElement("div");
               
               
-              upperDiv.style.display = "grid";
-              li.innerHTML += `<div id="main_box"><div id="small_boxes"><h5>${targetValue}</h5></div><div id="close">X</div></div>`;
+              upperDiv.style.display = "flex";
+              li.innerHTML += `<div id="main_box"><div id="small_boxes"><h5>${targetValue}</h5></div><div id="close"><img src="./images/icon-remove.svg"</div></div>`;
               
               element.append(li);
 
