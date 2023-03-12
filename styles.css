@@ -22,7 +22,7 @@ body {
 }
 
 .main {
-  display: flex;
+  display: flex; 
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
@@ -50,6 +50,8 @@ body {
   padding-top: 9px;
   text-align: center;
   cursor: pointer;
+  position: relative;
+  left: -3px;
 }
 
 #main_box {
@@ -72,6 +74,7 @@ body {
   align-items: center;
   align-content: space-between;
   justify-content: start;
+  flex-wrap: wrap;
   gap: 10px;
 }
 
@@ -85,6 +88,7 @@ body {
   border-radius: 5px;
   margin-bottom: 40px;
   padding-left: 19px;
+  background-color: #FFFFFF;
 }
 
 .box:nth-of-type(2) {
@@ -103,17 +107,17 @@ h5 {
   font-size: 16px;
   line-height: 24px;
   letter-spacing: -0.123077px;
-  color: black;
+  color: #5CA5A5;
 }
 
 #tools {
-    width: 200px;
+    width: 250px;
     height: 80px;
-    display: grid;
+    display: flex;
     align-items: center;
-    grid-template-columns: auto auto auto;
     gap: 16px;
     margin-bottom: 24px;
+    flex-wrap: wrap;
 
 }
 
@@ -151,12 +155,10 @@ p {
     width: fit-content;
     height: 32px;
     padding: 5px;
-    background: #5CA5A5;
-    
+    background: #effafa;
     border-radius: 4px;
-    
     cursor: pointer;
-    opacity: 0.5;
+    
 }
 
 .active {
@@ -185,9 +187,10 @@ p {
   width: 51px;
   height: 25px;
   background-color: #5CA5A5;
+  color: #FFFFFF;
   border-radius: 12px;
   text-align: center;
-  padding: 6px;
+  padding: 7px;
   margin-left: 1rem;
 }
 
@@ -197,8 +200,10 @@ p {
   border-radius: 12px;
   background-color: #2B3939;
   text-align: center;
-  padding: 5px;
+  padding-top: 7px;
+  font-size: 14px;
   color: #ffffff;
+  letter-spacing: -0.107692px;
   margin-left: 1rem;
 
 }
@@ -244,11 +249,12 @@ p {
   }
 
   #tools {
-    display: flex;
-    
+    display: flex; 
     position: relative;
     justify-content: flex-end;
-    left: 48px;    
+    left: 48px; 
+    flex-wrap: nowrap;
+    width: 200px;   
   }
 
   #first_div {
@@ -261,6 +267,14 @@ p {
     width: 1110px;
     height: 72px;
     top: -40px;
+  }
+
+  #small {
+    font-size: 18px;
+  }
+
+  h5 {
+    color: #5CA5A5;
   }
 
   h6 {
@@ -280,6 +294,7 @@ p {
     flex-direction: column;
     position: relative;
     left: -160px;
+    gap: 10px;
   }
 
   #remove {
@@ -287,5 +302,8 @@ p {
     left: 93%;
   }
 
+  #newString {
+    color: #FFFFFF
+  }
 
 }

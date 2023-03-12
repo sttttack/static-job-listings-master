@@ -14,15 +14,15 @@ fetch("./data.json")
       var stringNew = element.new.toString();
 
       if (stringNew === "true") {
-        var newString = `<div id="newString">New!</div>`;
+        var newString = `<div id="newString">NEW!</div>`;
       } else {
         newString = ``;
       }
-
+ 
       var stringFeatured = element.featured.toString();
 
       if (stringFeatured === "true") {
-        var featuredString = `<div id="featuredString">Featured!</div>`;
+        var featuredString = `<div id="featuredString">FEATURED</div>`;
       } else featuredString = ``;
 
       const home = mainHTML.innerHTML += `<div class="box">
@@ -95,16 +95,10 @@ fetch("./data.json")
                   li.remove();
                   boxes.forEach((box) => {
                   box.style.display = 'flex';
+                  
                 })
-                }) 
-                
-                
 
-
-                  
-                  
-                
-                
+                })
               });
             }
 
